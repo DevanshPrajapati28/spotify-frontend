@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Outfit", "Roboto", sans-serif;
+  --color-spotify-green: #1DB954;
+  --color-spotify-green-hover: #1ed760;
+  --color-spotify-black: #121212;
+  --color-spotify-base: #181818;
+  --color-spotify-elevated: #282828;
+  --color-spotify-highlight: #333333;
+  --color-spotify-text: #b3b3b3;
+}
+
+@layer base {
+  body {
+    @apply bg-spotify-black text-white font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/10;
+  }
+}
