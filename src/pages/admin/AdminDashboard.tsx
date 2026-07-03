@@ -136,9 +136,10 @@ export default function AdminDashboard() {
       
       setSongs(prev => [...prev, ...newSongs]);
       toast.success('Metadata extracted successfully!', { id: loadingToast });
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      toast.error('Failed to parse metadata', { id: loadingToast });
+      const errorMessage = error.response?.data?.error || error.message || 'Failed to parse metadata';
+      toast.error(`Error: ${errorMessage}`, { id: loadingToast });
     } finally {
       setIsProcessing(false);
       if (fileInputRef.current) fileInputRef.current.value = '';
