@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Bell, Users } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function TopNav() {
